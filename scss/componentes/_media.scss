@@ -1,0 +1,28 @@
+@use "../base/variables" as*;
+
+@media (max-width: 420px) {
+    /* Estilos de la barra de navegación cuando está en dispositivos pequeños */
+    @media (max-width: 420px) {
+        body.inicio {
+            background-image: none;
+            background-color: $primary-color;
+        }
+
+        header h1 {
+            font-size: 24px;
+            padding: 20px;
+        }
+
+        .nav-menu {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .nav-link {
+            font-size: 20px;
+            padding: 15px 0;
+        }
+
+
+    }
+}

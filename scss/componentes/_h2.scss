@@ -1,0 +1,23 @@
+@use "../base/variables" as*;
+
+h2 {
+    color: $text-color;
+    text-shadow: $highlight-color;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+.h2-inicio {
+    font-size: 2.5rem;
+}
+
+.h2-menu .h2-sobre {
+
+    font-size: 40px;
+    padding: 20px;
+}
+
+.Sobrenosotros-h2 {
+    text-align: center;
+    margin: 20px;
+}

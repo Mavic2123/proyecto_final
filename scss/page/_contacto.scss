@@ -1,0 +1,16 @@
+@use "../base/variables" as*;
+
+
+
+
+button.enviar {
+
+    background-color: $color-verde;
+    color: white;
+    border: none;
+}
+
+.enviar:hover {
+    box-shadow: 0 0 10px rgb(182, 182, 182);
+    cursor: pointer;
+}

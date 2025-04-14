@@ -1,0 +1,19 @@
+@use "../base/variables" as*;
+
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    background-color: $primary-color;
+
+    &.inicio {
+        background-image:url("../img/pexels-valeriya-1639562.jpg");
+        background-size: cover;
+    }
+
+}
