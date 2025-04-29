@@ -1,90 +1,296 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WorldBurguer</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-    <link rel="stylesheet" href="../assets/css/style.css"/>
+    <meta name="description"
+        content="Descubre las mejores promociones y ofertas en WorldBurguer Rosario. 2x1 en hamburguesas, descuentos especiales, combos familiares y mucho más." />
+    <meta name="keywords"
+        content="promociones hamburguesas, ofertas worldburguer, descuentos hamburguesas rosario, 2x1 hamburguesas, combos familiares, happy hour hamburguesas" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://worldburguer.com/promociones" />
+    <meta property="og:title" content="Promociones WorldBurguer - Las mejores ofertas en hamburguesas artesanales" />
+    <meta property="og:description" content="Aprovecha nuestras increíbles promociones en hamburguesas artesanales. ¡2x1, descuentos especiales y más!" />
+    <meta property="og:image" content="../assets/img/promo-hero.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://worldburguer.com/promociones" />
+    <meta property="twitter:title" content="Promociones WorldBurguer - Las mejores ofertas en hamburguesas artesanales" />
+    <meta property="twitter:description" content="Aprovecha nuestras increíbles promociones en hamburguesas artesanales. ¡2x1, descuentos especiales y más!" />
+    <meta property="twitter:image" content="../assets/img/promo-hero.jpg" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
+
+    <title>Promociones WorldBurguer - Las mejores ofertas en hamburguesas artesanales</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
 
-<body class="promociones">
-    <header>
-        <h1>Bienvenidos a la Experiencia WorldBurguer</h1>
-        <nav class="navbar navbar-expand-lg navbar-dark nav-menu">
+<body class="promociones-page">
+    <!-- Header -->
+    <header class="header">
+        <h1 class="visually-hidden">Promociones WorldBurguer - Las mejores ofertas en hamburguesas artesanales</h1>
+        <nav class="navbar navbar-expand-lg navbar-dark nav-menu" aria-label="Navegación principal">
             <div class="container-fluid">
-                <a class="navbar-brand" href="../index.html"><img src="../assets/img/logoworld (1).png" alt="Logo WorldBurguer"></a>
-                <button class="navbar-toggler boton-headar" type="button" data-bs-toggle="collapse"
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../assets/img/logoworld (1).png" alt="Logo WorldBurguer" width="120" height="120" class="d-inline-block" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                    aria-expanded="false" aria-label="Alternar navegación">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="../index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="menu.html">Nuestro Menú</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Promociones</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="sobrenosotros.html">Sobre Nosotros</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contacto.html">Contacto</a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="menu.html">Nuestro Menú</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Promociones</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sobrenosotros.html">Sobre Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
 
+    <!-- Main -->
     <main class="promociones">
-            <div id="promoCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="p-5 promo">
-                            <h3>¡Gran Descuento en Burgers!</h3>
-                            <p>Consigue un 50% de descuento en todas las hamburguesas este fin de semana.</p>
+        <!-- Hero Section -->
+        <section class="hero-promociones text-center text-white py-5 animate__animated animate__fadeIn">
+            <div class="container">
+                <h2 class="display-4 mb-4 animate__animated animate__slideInDown">Ofertas Imperdibles</h2>
+                <p class="lead mb-4 animate__animated animate__slideInUp">Descubre nuestras promociones especiales y disfruta más por menos</p>
+            </div>
+        </section>
+
+        <!-- Carrusel de Promociones Principales -->
+        <section class="promociones-principales py-5" aria-label="Promociones principales">
+            <div class="container">
+                <div id="promoCarousel" class="carousel slide shadow-lg" data-bs-ride="carousel">
+                    <div class="carousel-inner rounded">
+                        <div class="carousel-item active animate__animated animate__fadeIn">
+                            <div class="promo-slide p-5 text-center">
+                                <span class="badge bg-danger mb-3">¡OFERTA ESPECIAL!</span>
+                                <h3 class="display-5 mb-3">¡50% OFF en Hamburguesas!</h3>
+                                <p class="lead mb-4">Este fin de semana, todas las hamburguesas a mitad de precio.</p>
+                                <a href="menu.html" class="btn btn-lg btn-primary animate__animated animate__pulse animate__infinite">Ver Menú</a>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="promo-slide p-5 text-center">
+                                <span class="badge bg-warning text-dark mb-3">COMBO ESPECIAL</span>
+                                <h3 class="display-5 mb-3">¡Combo Familiar!</h3>
+                                <p class="lead mb-4">3 combos familiares + bebida gratis</p>
+                                <a href="menu.html#combos" class="btn btn-lg btn-primary">Ver Combos</a>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="promo-slide p-5 text-center">
+                                <span class="badge bg-success mb-3">KIDS</span>
+                                <h3 class="display-5 mb-3">¡Menú Infantil!</h3>
+                                <p class="lead mb-4">30% OFF en menú kids + juguete de regalo</p>
+                                <a href="menu.html#kids" class="btn btn-lg btn-primary">Ver Menú Kids</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <div class=" p-5 promo" >
-                            <h3>¡Combo Familiar!</h3>
-                            <p>Compra 3 combos familiares y lleva una bebida gratis.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="d-block w-100 p-5 promo" >
-                            <h3>¡Menú Kids con Descuento!</h3>
-                            <p>Los niños disfrutan de un 30% de descuento en nuestro menú especial.</p>
-                        </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#promoCarousel"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#promoCarousel"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Siguiente</span>
+                    </button>
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#promoCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#promoCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#promoCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#promoCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#promoCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
             </div>
-        </main>
-    
-    
-    <footer>
-        <p>&copy; 2025 WorldBurguer</p>
+        </section>
+
+        <!-- Promociones Destacadas -->
+        <section class="promos-destacadas py-5 bg-light" aria-labelledby="promos-destacadas-titulo">
+            <div class="container">
+                <h2 id="promos-destacadas-titulo" class="text-center mb-5 animate__animated animate__fadeIn">Promociones Especiales</h2>
+                <div class="row g-4">
+                    <!-- 2x1 Miércoles -->
+                    <div class="col-md-4">
+                        <article class="promo-card card h-100 animate__animated animate__fadeInLeft">
+                            <div class="card-body text-center">
+                                <div class="promo-icon mb-3">
+                                    <i class="fas fa-burger fa-3x text-primary"></i>
+                                </div>
+                                <h3 class="card-title h4">2x1 Miércoles</h3>
+                                <p class="card-text">Todos los miércoles, llevate dos hamburguesas por el precio de una. ¡La mejor forma de compartir!</p>
+                                <div class="promo-details mb-4">
+                                    <p class="text-success fw-bold">Ahorro del 50%</p>
+                                    <p class="text-muted"><small>Válido solo los miércoles</small></p>
+                                </div>
+                                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#promoModal">Ver detalles</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Burger Fest -->
+                    <div class="col-md-4">
+                        <article class="promo-card card h-100 animate__animated animate__fadeInUp">
+                            <div class="card-body text-center">
+                                <div class="promo-icon mb-3">
+                                    <i class="fas fa-star fa-3x text-warning"></i>
+                                </div>
+                                <h3 class="card-title h4">Burger Fest</h3>
+                                <p class="card-text">Una semana llena de sabor con combos especiales a precios increíbles. ¡No te lo pierdas!</p>
+                                <div class="promo-details mb-4">
+                                    <p class="text-success fw-bold">Hasta 40% OFF</p>
+                                    <p class="text-muted"><small>Del 1 al 7 de cada mes</small></p>
+                                </div>
+                                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#promoModal">Ver detalles</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Happy Hour -->
+                    <div class="col-md-4">
+                        <article class="promo-card card h-100 animate__animated animate__fadeInRight">
+                            <div class="card-body text-center">
+                                <div class="promo-icon mb-3">
+                                    <i class="fas fa-clock fa-3x text-info"></i>
+                                </div>
+                                <h3 class="card-title h4">Happy Hour</h3>
+                                <p class="card-text">De 18 a 20 hs, disfruta de bebidas al 50% y papas gratis con cualquier combo.</p>
+                                <div class="promo-details mb-4">
+                                    <p class="text-success fw-bold">Bebidas 50% OFF</p>
+                                    <p class="text-muted"><small>Válido de lunes a jueves</small></p>
+                                </div>
+                                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#promoModal">Ver detalles</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Newsletter -->
+        <section class="newsletter py-5 bg-dark text-white">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 text-center">
+                        <h2 class="mb-4 animate__animated animate__fadeIn">¡No te pierdas ninguna promoción!</h2>
+                        <p class="mb-4">Suscríbete a nuestro newsletter y recibe ofertas exclusivas.</p>
+                        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('¡Gracias por suscribirte!');">
+                            <div class="input-group mb-3">
+                                <input type="email" class="form-control" placeholder="Tu correo electrónico" aria-label="Tu correo electrónico" required>
+                                <button class="btn btn-primary" type="submit">Suscribirse</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal de Promociones -->
+    <div class="modal fade" id="promoModal" tabindex="-1" aria-labelledby="promoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="promoModalLabel">Detalles de la Promoción</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Términos y condiciones de la promoción:</p>
+                    <ul>
+                        <li>Promoción válida en el local y para delivery</li>
+                        <li>No acumulable con otras promociones</li>
+                        <li>Sujeto a disponibilidad</li>
+                        <li>Consulta las bases y condiciones completas en el local</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <a href="menu.html" class="btn btn-primary">Ir al Menú</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h4>WorldBurguer</h4>
+                    <p>Las mejores hamburguesas artesanales de Rosario</p>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h4>Contacto</h4>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt"></i> Av. Pellegrini 1234, Rosario</p>
+                        <p><i class="fas fa-phone"></i> (341) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> info@worldburguer.com</p>
+                    </address>
+                </div>
+                <div class="col-md-4">
+                    <h4>Síguenos</h4>
+                    <div class="redes-sociales">
+                        <a href="https://facebook.com/worldburguer" class="text-white me-3" aria-label="Facebook"><i class="fab fa-facebook fa-2x"></i></a>
+                        <a href="https://instagram.com/worldburguer" class="text-white me-3" aria-label="Instagram"><i class="fab fa-instagram fa-2x"></i></a>
+                        <a href="https://twitter.com/worldburguer" class="text-white" aria-label="Twitter"><i class="fab fa-twitter fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2024 WorldBurguer. Todos los derechos reservados.</p>
+            </div>
+        </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script personalizado para animaciones -->
+    <script>
+        // Activar animaciones al hacer scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate__animated');
+                    entry.target.style.visibility = 'visible';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.animate__animated').forEach((element) => {
+            observer.observe(element);
+        });
+
+        // Iniciar el carrusel automáticamente
+        const carousel = new bootstrap.Carousel(document.querySelector('#promoCarousel'), {
+            interval: 5000,
+            touch: true
+        });
+    </script>
 </body>
 
 </html>

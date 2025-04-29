@@ -1,0 +1,73 @@
+// Sistema de grid personalizado
+.container {
+  @include contenedor;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -$espaciado-s;
+}
+
+.col {
+  padding: $espaciado-s;
+  flex: 1;
+  
+  // Columnas específicas
+  @for $i from 1 through 12 {
+    &-#{$i} {
+      flex: 0 0 percentage($i / 12);
+      max-width: percentage($i / 12);
+    }
+  }
+
+  // Responsive
+  @each $breakpoint, $width in (
+    'sm': $movil,
+    'md': $tablet,
+    'lg': $desktop,
+    'xl': $desktop-xl
+  ) {
+    @include responsive($width) {
+      @for $i from 1 through 12 {
+        &-#{$breakpoint}-#{$i} {
+          flex: 0 0 percentage($i / 12);
+          max-width: percentage($i / 12);
+        }
+      }
+    }
+  }
+}
+
+// Utilidades de grid
+.gap {
+  &-0 { gap: 0; }
+  &-1 { gap: $espaciado-xs; }
+  &-2 { gap: $espaciado-s; }
+  &-3 { gap: $espaciado-m; }
+  &-4 { gap: $espaciado-l; }
+  &-5 { gap: $espaciado-xl; }
+}
+
+// Alineación
+.justify {
+  &-start { justify-content: flex-start; }
+  &-center { justify-content: center; }
+  &-end { justify-content: flex-end; }
+  &-between { justify-content: space-between; }
+  &-around { justify-content: space-around; }
+}
+
+.align {
+  &-start { align-items: flex-start; }
+  &-center { align-items: center; }
+  &-end { align-items: flex-end; }
+  &-stretch { align-items: stretch; }
+}
+
+// Grid automático
+.auto-grid {
+  display: grid;
+  gap: $espaciado-m;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+} 

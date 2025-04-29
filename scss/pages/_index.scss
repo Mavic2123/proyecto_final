@@ -1,0 +1,68 @@
+// Estilos para la página de inicio
+.hero {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    @include flex-center;
+    text-align: center;
+    color: white;
+    
+    h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        
+        @include responsive(desktop) {
+            font-size: 4rem;
+        }
+    }
+    
+    p {
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+.features {
+    padding: 4rem 0;
+    background-color: $light-color;
+    
+    .feature-card {
+        text-align: center;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        
+        img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 1rem;
+        }
+        
+        h3 {
+            color: $primary-color;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+.cta-section {
+    background-color: $primary-color;
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+    
+    .btn-secondary {
+        background-color: $secondary-color;
+        color: white;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        
+        &:hover {
+            background-color: darken($secondary-color, 10%);
+        }
+    }
+} 

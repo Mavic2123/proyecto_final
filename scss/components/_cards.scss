@@ -1,0 +1,117 @@
+.card {
+  background-color: $color-fondo;
+  border-radius: $borde-radio;
+  overflow: hidden;
+  @include sombra-hover;
+
+  &__imagen {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    @include transicion-suave;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__contenido {
+    padding: $espaciado-l;
+  }
+
+  &__titulo {
+    font-family: $fuente-titulos;
+    font-size: $texto-grande;
+    color: $color-texto;
+    margin-bottom: $espaciado-s;
+  }
+
+  &__descripcion {
+    color: $color-gris-medio;
+    margin-bottom: $espaciado-m;
+    line-height: 1.6;
+  }
+
+  &__precio {
+    font-size: $texto-grande;
+    font-weight: bold;
+    color: $color-primario;
+    margin-bottom: $espaciado-m;
+  }
+
+  &__footer {
+    padding: $espaciado-m;
+    border-top: 1px solid $color-gris-claro;
+    @include flex-between;
+  }
+
+  // Variantes de cards
+  &--destacado {
+    border: 2px solid $color-primario;
+    
+    .card__titulo {
+      color: $color-primario;
+    }
+  }
+
+  &--horizontal {
+    @include responsive($tablet) {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+
+      .card__imagen {
+        height: 100%;
+      }
+    }
+  }
+
+  // Estados
+  &--loading {
+    position: relative;
+    min-height: 400px;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        $color-gris-claro 0%,
+        lighten($color-gris-claro, 5%) 50%,
+        $color-gris-claro 100%
+      );
+      animation: loading 1.5s infinite;
+    }
+  }
+}
+
+// Grid de cards
+.cards-grid {
+  display: grid;
+  gap: $espaciado-l;
+  
+  @include responsive($movil) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @include responsive($tablet) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  @include responsive($desktop) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+// Animación para el estado de carga
+@keyframes loading {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+} 

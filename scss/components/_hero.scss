@@ -1,0 +1,116 @@
+.hero {
+  position: relative;
+  min-height: 80vh;
+  background-color: $color-secundario;
+  overflow: hidden;
+
+  // Variante con imagen de fondo
+  &--con-imagen {
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color-secundario, 0.7);
+      z-index: 1;
+    }
+
+    .hero__imagen {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__contenedor {
+    @include contenedor;
+    @include flex-center;
+    min-height: inherit;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: $espaciado-xl 0;
+  }
+
+  &__contenido {
+    max-width: 800px;
+  }
+
+  &__titulo {
+    font-family: $fuente-titulos;
+    font-size: $titulo-grande;
+    color: $color-fondo;
+    margin-bottom: $espaciado-l;
+    line-height: 1.2;
+
+    @include responsive($tablet) {
+      font-size: calc(#{$titulo-grande} * 1.5);
+    }
+  }
+
+  &__subtitulo {
+    font-size: $texto-grande;
+    color: rgba($color-fondo, 0.9);
+    margin-bottom: $espaciado-xl;
+    line-height: 1.6;
+  }
+
+  &__botones {
+    display: flex;
+    gap: $espaciado-m;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  // Variante con animación
+  &--animado {
+    .hero__titulo {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .hero__subtitulo {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards 0.2s;
+    }
+
+    .hero__botones {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards 0.4s;
+    }
+  }
+
+  // Variante con fondo diagonal
+  &--diagonal {
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background-color: $color-fondo;
+      clip-path: polygon(0 100%, 100% 0, 100% 100%, 0% 100%);
+    }
+  }
+}
+
+// Animaciones
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 

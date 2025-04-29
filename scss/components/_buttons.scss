@@ -1,0 +1,75 @@
+.boton {
+  @include boton-base;
+  
+  // Variantes de botones
+  &--primario {
+    background-color: $color-primario;
+    color: $color-fondo;
+
+    &:hover {
+      background-color: darken($color-primario, 10%);
+    }
+  }
+
+  &--secundario {
+    background-color: $color-secundario;
+    color: $color-fondo;
+
+    &:hover {
+      background-color: darken($color-secundario, 10%);
+    }
+  }
+
+  &--outline {
+    border: 2px solid $color-primario;
+    color: $color-primario;
+    background-color: transparent;
+
+    &:hover {
+      background-color: $color-primario;
+      color: $color-fondo;
+    }
+  }
+
+  // Tamaños de botones
+  &--pequeno {
+    padding: $espaciado-xs $espaciado-m;
+    font-size: $texto-pequeno;
+  }
+
+  &--grande {
+    padding: $espaciado-m $espaciado-xl;
+    font-size: $texto-medio;
+  }
+
+  // Estados del botón
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  &--loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.8;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 1em;
+      height: 1em;
+      border: 2px solid transparent;
+      border-radius: 50%;
+      border-top-color: currentColor;
+      right: $espaciado-s;
+      animation: spin 0.6s linear infinite;
+    }
+  }
+}
+
+// Animación para el estado de carga
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+} 

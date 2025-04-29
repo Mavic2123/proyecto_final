@@ -1,15 +1,44 @@
-@use "base/generales";
-@use "base/variables";
-@use "componentes/bodypag";
-@use "componentes/card";
-@use "componentes/footer";
-@use "componentes/header";
-@use "componentes/h2";
-@use "componentes/main";
-@use "componentes/nav";
-@use "page/contacto";
-@use "page/promociones";
-@use "componentes/media";
+// Variables
+$primary-color: #ff6b6b;
+$secondary-color: #4ecdc4;
+$dark-color: #2d3436;
+$light-color: #f9f9f9;
+$font-primary: 'Poppins', sans-serif;
+$font-secondary: 'Roboto', sans-serif;
 
+// Mixins
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+@mixin responsive($breakpoint) {
+    @if $breakpoint == tablet {
+        @media (min-width: 768px) { @content; }
+    }
+    @if $breakpoint == desktop {
+        @media (min-width: 1024px) { @content; }
+    }
+}
 
+// Reset y estilos base
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-primary;
+    line-height: 1.6;
+    color: $dark-color;
+    background-color: $light-color;
+}
+
+// Importación de páginas
+@import "pages/index";
+@import "pages/menu";
+@import "pages/promociones";
+@import "pages/sobrenosotros";
+@import "pages/contacto"; 

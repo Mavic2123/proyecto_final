@@ -1,0 +1,71 @@
+// Flexbox
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Media Queries
+@mixin responsive($breakpoint) {
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+// Botones
+@mixin boton-base {
+  display: inline-block;
+  padding: $espaciado-s $espaciado-l;
+  border: none;
+  border-radius: $borde-radio;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: $fuente-principal;
+  text-align: center;
+}
+
+// Transiciones
+@mixin transicion-suave {
+  transition: all 0.3s ease;
+}
+
+// Sombras
+@mixin sombra-hover {
+  transition: box-shadow 0.3s ease;
+  &:hover {
+    box-shadow: $sombra-media;
+  }
+}
+
+// Grid
+@mixin grid($columnas: 1, $gap: $espaciado-m) {
+  display: grid;
+  grid-template-columns: repeat($columnas, 1fr);
+  gap: $gap;
+}
+
+// Contenedor
+@mixin contenedor {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $espaciado-m;
+}
+
+// Texto truncado
+@mixin texto-truncado {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+} 

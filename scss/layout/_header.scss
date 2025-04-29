@@ -1,0 +1,66 @@
+.header {
+  background-color: $color-primario;
+  padding: $espaciado-m 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: $sombra-suave;
+
+  &__contenedor {
+    @include contenedor;
+    @include flex-between;
+  }
+
+  &__logo {
+    font-family: $fuente-titulos;
+    font-size: $titulo-pequeno;
+    font-weight: bold;
+    color: $color-fondo;
+    @include transicion-suave;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__nav {
+    @include flex-center;
+    gap: $espaciado-l;
+
+    @include responsive($movil) {
+      display: none; // Se ocultará en móvil y se mostrará en menú hamburguesa
+    }
+
+    @include responsive($tablet) {
+      display: flex;
+    }
+  }
+
+  &__link {
+    color: $color-fondo;
+    font-size: $texto-base;
+    font-weight: 500;
+    padding: $espaciado-xs $espaciado-s;
+    border-radius: $borde-radio;
+    @include transicion-suave;
+
+    &:hover, &.activo {
+      background-color: rgba($color-fondo, 0.1);
+    }
+  }
+
+  &__menu-movil {
+    display: none;
+    color: $color-fondo;
+    font-size: $texto-grande;
+    cursor: pointer;
+
+    @include responsive($movil) {
+      display: block;
+    }
+
+    @include responsive($tablet) {
+      display: none;
+    }
+  }
+} 
