@@ -1,15 +1,18 @@
 // Colores
-$color-primario: #FF6B00;
-$color-secundario: #333333;
-$color-fondo: #FFFFFF;
-$color-texto: #222222;
-$color-gris-claro: #f5f5f5;
-$color-gris-medio: #999999;
-$color-exito: #28a745;
-$color-error: #dc3545;
+$color-primario: #FF4B2B;          // Naranja cálido
+$color-primario-claro: #FFE6E0;    // Naranja claro
+$color-secundario: #2C1810;        // Marrón oscuro
+$color-fondo: #FFFFFF;             // Blanco
+$color-texto: #4A4A4A;             // Gris oscuro
+$color-texto-oscuro: #2D2D2D;      // Casi negro
+$color-texto-claro: #6C757D;       // Gris medio
+$color-gris-claro: #F8F9FA;        // Gris muy claro
+$color-gris-medio: #E9ECEF;        // Gris medio claro
+$color-exito: #28A745;             // Verde
+$color-error: #DC3545;             // Rojo
 
 // Fuentes
-$fuente-principal: 'Roboto', sans-serif;
+$fuente-principal: 'Poppins', sans-serif;
 $fuente-titulos: 'Montserrat', sans-serif;
 
 // Tamaños de fuente
@@ -35,7 +38,7 @@ $espaciado-l: 1.5rem;        // 24px
 $espaciado-xl: 2rem;         // 32px
 
 // Bordes y sombras
-$borde-radio: 4px;
+$borde-radio: 8px;
 $sombra-suave: 0 2px 4px rgba(0,0,0,0.1);
 $sombra-media: 0 4px 6px rgba(0,0,0,0.1);
 $sombra-fuerte: 0 10px 20px rgba(0,0,0,0.15); 

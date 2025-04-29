@@ -5,19 +5,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WorldBurguer - Sobre Nosotros</title>
-
+    <meta name="description" content="Conoce la historia, valores y el equipo detrás de WorldBurguer, tu hamburguesería artesanal en Rosario." />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
 
-<body class="sobre-nosotros-body">
+<body class="about-page">
     <!-- ========== HEADER ========== -->
     <header>
-        <h1>Bienvenidos a la Experiencia WorldBurguer</h1>
         <nav class="navbar navbar-expand-lg navbar-dark nav-menu">
             <div class="container-fluid">
                 <a class="navbar-brand" href="../index.html">
-                    <img src="../assets/img/logoworld (1).png" alt="Logo WorldBurguer" />
+                    <img src="../assets/img/logoworld (1).png" alt="Logo WorldBurguer" width="120" height="120" class="d-inline-block" />
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
@@ -36,53 +36,74 @@
     </header>
 
     <!-- ========== MAIN ========== -->
-    <main class="sobre-nosotros py-5">
+    <main>
         <!-- Historia -->
-        <section class="container mb-5">
-            <h2 class="text-center mb-4">Nuestra Historia</h2>
-            <div class="row align-items-center">
-                <div class="col-md-6 mb-4 mb-md-0">
-                    <img src="../assets/img/rosario.jpg" alt="Foto de Rosario"
-                        class="img-fluid rounded shadow" />
-                </div>
-                <div class="col-md-6">
-                    <p class="texto-sobre-nosotros">Somos una familia oriunda de Rosario, Santa Fe, apasionados por la
-                        comida de calidad y por brindar una experiencia única a nuestros clientes. Desde hace más de 10
-                        años, nos dedicamos a crear las mejores hamburguesas utilizando ingredientes frescos y de la más
-                        alta calidad.</p>
-                    <p class="texto-sobre-nosotros">En WorldBurguer, creemos en lo hecho en casa y en ofrecer un
-                        servicio personalizado. Nuestro compromiso no solo es con el sabor, sino también con la
-                        satisfacción de cada persona que cruza nuestra puerta. Nos enorgullece ver cómo nuestra familia
-                        crece con cada cliente satisfecho.</p>
+        <section class="about-page__historia">
+            <div class="container">
+                <h1>Nuestra Historia</h1>
+                <div class="row align-items-center">
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <img src="../assets/img/rosario.jpg" alt="Foto de Rosario" class="img-fluid rounded shadow" />
+                    </div>
+                    <div class="col-md-6">
+                        <p class="texto-sobre-nosotros">Somos una familia oriunda de Rosario, Santa Fe, apasionados por la comida de calidad y por brindar una experiencia única a nuestros clientes. Desde hace más de 10 años, nos dedicamos a crear las mejores hamburguesas utilizando ingredientes frescos y de la más alta calidad.</p>
+                        <p class="texto-sobre-nosotros">En WorldBurguer, creemos en lo hecho en casa y en ofrecer un servicio personalizado. Nuestro compromiso no solo es con el sabor, sino también con la satisfacción de cada persona que cruza nuestra puerta. Nos enorgullece ver cómo nuestra familia crece con cada cliente satisfecho.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Misión, Visión, Valores -->
-        <section class="container text-center">
-            <h2 class="mb-4">Nuestra Filosofía</h2>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <article class="filosofia-card">
-                    <h3>Misión</h3>
-                    <p>Brindar a nuestros clientes hamburguesas únicas, con ingredientes frescos y una atención
-                        memorable.</p>
-                </article>
-                <article class="filosofia-card">
-                    <h3>Visión</h3>
-                    <p>Ser reconocidos como la hamburguesería preferida de Rosario, expandiendo nuestra pasión por todo
-                        el país.</p>
-                </article>
-                <article class="filosofia-card">
-                    <h3>Valores</h3>
-                    <p>Calidad, honestidad, compromiso, cercanía y amor por lo que hacemos.</p>
-                </article>
+        <!-- Valores -->
+        <section class="about-page__valores">
+            <div class="container text-center">
+                <h2 class="mb-4">Nuestra Filosofía</h2>
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                        <article class="filosofia-card">
+                            <h3>Misión</h3>
+                            <p>Brindar a nuestros clientes hamburguesas únicas, con ingredientes frescos y una atención memorable.</p>
+                        </article>
+                    </div>
+                    <div class="col">
+                        <article class="filosofia-card">
+                            <h3>Visión</h3>
+                            <p>Ser reconocidos como la hamburguesería preferida de Rosario, expandiendo nuestra pasión por todo el país.</p>
+                        </article>
+                    </div>
+                    <div class="col">
+                        <article class="filosofia-card">
+                            <h3>Valores</h3>
+                            <p>Calidad, honestidad, compromiso, cercanía y amor por lo que hacemos.</p>
+                        </article>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
     <!-- ========== FOOTER ========== -->
     <footer class="bg-dark text-white text-center py-3 mt-5">
-        <p class="mb-0">&copy; 2025 WorldBurguer</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>Contacto</h4>
+                    <p>Email: info@worldburguer.com</p>
+                    <p>Tel: (341) 123-4567</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <p class="mb-0">&copy; 2025 WorldBurguer</p>
+                    <p>Rosario, Santa Fe</p>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <!-- Scripts -->

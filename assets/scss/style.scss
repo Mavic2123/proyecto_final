@@ -102,6 +102,30 @@ img {
     border: none;
     text-align: center;
 
+    &-primary {
+        background-color: $color-primario !important;
+        border-color: $color-primario !important;
+        color: white !important;
+
+        &:hover {
+            background-color: darken($color-primario, 10%) !important;
+            border-color: darken($color-primario, 10%) !important;
+            transform: translateY(-2px);
+        }
+    }
+
+    &-outline-primary {
+        background-color: transparent !important;
+        border: 2px solid $color-primario !important;
+        color: $color-primario !important;
+
+        &:hover {
+            background-color: $color-primario !important;
+            color: white !important;
+            transform: translateY(-2px);
+        }
+    }
+
     &--primario {
         background-color: $color-primario;
         color: white;

@@ -1,66 +1,209 @@
 .header {
-  background-color: $color-primario;
-  padding: $espaciado-m 0;
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 100;
-  box-shadow: $sombra-suave;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba($color-secundario, 0.95);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  padding: 1rem 0;
+
+  &.scrolled {
+    padding: 0.8rem 0;
+    background-color: rgba($color-secundario, 0.98);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
 
   &__contenedor {
     @include contenedor;
-    @include flex-between;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   &__logo {
-    font-family: $fuente-titulos;
-    font-size: $titulo-pequeno;
-    font-weight: bold;
-    color: $color-fondo;
-    @include transicion-suave;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 
-    &:hover {
+    img {
+      height: 50px;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover img {
       transform: scale(1.05);
+    }
+
+    span {
+      font-family: $fuente-titulos;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+      display: none;
+
+      @media (min-width: $tablet) {
+        display: block;
+      }
     }
   }
 
   &__nav {
-    @include flex-center;
-    gap: $espaciado-l;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
 
-    @include responsive($movil) {
-      display: none; // Se ocultará en móvil y se mostrará en menú hamburguesa
-    }
-
-    @include responsive($tablet) {
-      display: flex;
+    @media (max-width: $tablet) {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: rgba($color-secundario, 0.98);
+      padding: 1rem 0;
+      flex-direction: column;
+      gap: 1rem;
+      
+      &.activo {
+        display: flex;
+      }
     }
   }
 
   &__link {
-    color: $color-fondo;
+    color: white;
     font-size: $texto-base;
     font-weight: 500;
-    padding: $espaciado-xs $espaciado-s;
-    border-radius: $borde-radio;
-    @include transicion-suave;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    position: relative;
 
-    &:hover, &.activo {
-      background-color: rgba($color-fondo, 0.1);
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background-color: $color-primario;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    &:hover,
+    &.activo {
+      color: $color-primario;
+
+      &::after {
+        width: 80%;
+      }
     }
   }
 
-  &__menu-movil {
-    display: none;
-    color: $color-fondo;
-    font-size: $texto-grande;
-    cursor: pointer;
+  &__botones {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 
-    @include responsive($movil) {
-      display: block;
+    @media (max-width: $tablet) {
+      display: none;
+    }
+  }
+
+  &__menu-toggle {
+    display: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: rgba(white, 0.1);
     }
 
-    @include responsive($tablet) {
-      display: none;
+    @media (max-width: $tablet) {
+      display: block;
+    }
+  }
+}
+
+// Menú móvil
+.menu-movil {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba($color-secundario, 0.98);
+  z-index: 999;
+  display: none;
+  padding: 2rem;
+  
+  &.activo {
+    display: block;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    .logo img {
+      height: 40px;
+    }
+
+    .cerrar {
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.5rem;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: rgba(white, 0.1);
+      }
+    }
+  }
+
+  &__nav {
+    text-align: center;
+
+    a {
+      display: block;
+      color: white;
+      font-size: 1.2rem;
+      padding: 1rem;
+      transition: all 0.3s ease;
+
+      &:hover,
+      &.activo {
+        color: $color-primario;
+      }
+    }
+  }
+
+  &__footer {
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    width: 100%;
+    text-align: center;
+
+    .botones {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 0 2rem;
+
+      .btn {
+        width: 100%;
+      }
     }
   }
 } 

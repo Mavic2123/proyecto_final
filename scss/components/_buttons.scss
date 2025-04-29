@@ -1,75 +1,119 @@
-.boton {
-  @include boton-base;
-  
-  // Variantes de botones
-  &--primario {
-    background-color: $color-primario;
-    color: $color-fondo;
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 
-    &:hover {
-      background-color: darken($color-primario, 10%);
+    // Variantes principales
+    &--primario {
+        background-color: $color-primario;
+        color: white;
+        border: 2px solid $color-primario;
+
+        &:hover {
+            background-color: darken($color-primario, 10%);
+            border-color: darken($color-primario, 10%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba($color-primario, 0.3);
+        }
     }
-  }
 
-  &--secundario {
-    background-color: $color-secundario;
-    color: $color-fondo;
+    &--secundario {
+        background-color: transparent;
+        color: $color-primario;
+        border: 2px solid $color-primario;
 
-    &:hover {
-      background-color: darken($color-secundario, 10%);
+        &:hover {
+            background-color: $color-primario;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba($color-primario, 0.3);
+        }
     }
-  }
 
-  &--outline {
-    border: 2px solid $color-primario;
-    color: $color-primario;
-    background-color: transparent;
+    &--oscuro {
+        background-color: $color-secundario;
+        color: white;
+        border: 2px solid $color-secundario;
 
-    &:hover {
-      background-color: $color-primario;
-      color: $color-fondo;
+        &:hover {
+            background-color: darken($color-secundario, 10%);
+            border-color: darken($color-secundario, 10%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba($color-secundario, 0.3);
+        }
     }
-  }
 
-  // Tamaños de botones
-  &--pequeno {
-    padding: $espaciado-xs $espaciado-m;
-    font-size: $texto-pequeno;
-  }
-
-  &--grande {
-    padding: $espaciado-m $espaciado-xl;
-    font-size: $texto-medio;
-  }
-
-  // Estados del botón
-  &:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-  }
-
-  &--loading {
-    position: relative;
-    pointer-events: none;
-    opacity: 0.8;
-
-    &::after {
-      content: '';
-      position: absolute;
-      width: 1em;
-      height: 1em;
-      border: 2px solid transparent;
-      border-radius: 50%;
-      border-top-color: currentColor;
-      right: $espaciado-s;
-      animation: spin 0.6s linear infinite;
+    // Tamaños
+    &--pequeno {
+        padding: 0.5rem 1.5rem;
+        font-size: 0.875rem;
     }
-  }
+
+    &--grande {
+        padding: 1rem 2.5rem;
+        font-size: 1.125rem;
+    }
+
+    // Estados
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none !important;
+        box-shadow: none !important;
+    }
+
+    &--loading {
+        position: relative;
+        pointer-events: none;
+        opacity: 0.8;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 1.2em;
+            height: 1.2em;
+            top: 50%;
+            right: 1rem;
+            transform: translateY(-50%);
+            border: 2px solid transparent;
+            border-radius: 50%;
+            border-top-color: currentColor;
+            animation: spin 0.6s linear infinite;
+        }
+    }
+
+    // Variantes de ancho
+    &--block {
+        display: block;
+        width: 100%;
+    }
+
+    // Grupos de botones
+    &-group {
+        display: inline-flex;
+        gap: 1rem;
+
+        @media (max-width: $movil) {
+            flex-direction: column;
+            width: 100%;
+
+            .btn {
+                width: 100%;
+            }
+        }
+    }
 }
 
-// Animación para el estado de carga
+// Animación de carga
 @keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+    to {
+        transform: rotate(360deg);
+    }
 } 

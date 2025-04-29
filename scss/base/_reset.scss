@@ -3,6 +3,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html {
@@ -15,6 +17,7 @@ body {
   line-height: 1.6;
   color: $color-texto;
   background-color: $color-fondo;
+  overflow-x: hidden;
 }
 
 img {
@@ -26,6 +29,22 @@ img {
 a {
   text-decoration: none;
   color: inherit;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $color-primario;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $fuente-titulos;
+  font-weight: 700;
+  line-height: 1.2;
+  color: $color-texto-oscuro;
+}
+
+p {
+  margin-bottom: 1rem;
 }
 
 ul, ol {
@@ -37,5 +56,68 @@ button {
   border: none;
   cursor: pointer;
   font-family: inherit;
+  transition: all 0.3s ease;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($color-primario, 0.3);
+  }
+}
+
+input, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  
+  &:focus {
+    outline: none;
+    border-color: $color-primario;
+  }
+}
+
+// Utilidades comunes
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+.mb-5 { margin-bottom: 3rem; }
+
+// Animaciones base
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.slide-up {
+  animation: slideUp 0.5s ease-out;
 }
 

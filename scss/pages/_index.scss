@@ -1,48 +1,114 @@
 // Estilos para la página de inicio
 .hero {
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/hero-bg.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/hero-bg.jpg');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     display: flex;
     align-items: center;
     text-align: center;
     color: white;
     padding-top: 80px;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.3) 100%);
+        z-index: 1;
+    }
 
     &__contenido {
         @include contenedor;
+        position: relative;
+        z-index: 2;
+        animation: fadeInUp 1s ease-out;
 
         h1 {
-            font-size: 3.5rem;
+            font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 700;
             margin-bottom: 1.5rem;
             line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            
+            @media (max-width: 768px) {
+                font-size: clamp(2rem, 4vw, 3rem);
+            }
         }
 
         p {
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 2vw, 1.2rem);
             margin-bottom: 2rem;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            
+            @media (max-width: 768px) {
+                font-size: 1rem;
+                padding: 0 1rem;
+            }
         }
 
         .botones {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             justify-content: center;
+            flex-wrap: wrap;
+            padding: 0 1rem;
+
+            .btn {
+                min-width: 180px;
+                transition: all 0.3s ease;
+                
+                @media (max-width: 480px) {
+                    width: 100%;
+                    margin-bottom: 1rem;
+                }
+            }
+
+            .btn--primario {
+                background-color: $color-primario;
+                border: 2px solid $color-primario;
+                
+                &:hover {
+                    background-color: darken($color-primario, 10%);
+                    border-color: darken($color-primario, 10%);
+                    transform: translateY(-2px);
+                }
+            }
 
             .btn--secundario {
-                border-color: white;
+                border: 2px solid white;
                 color: white;
+                backdrop-filter: blur(5px);
+                background-color: rgba(255,255,255,0.1);
 
                 &:hover {
                     background-color: white;
                     color: $color-primario;
+                    transform: translateY(-2px);
                 }
             }
         }
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
