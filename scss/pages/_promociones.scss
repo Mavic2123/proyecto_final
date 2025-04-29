@@ -1,102 +1,230 @@
 // Estilos para la página de promociones
 .promociones {
-    padding: 4rem 0;
-    
-    h1 {
-        color: $primary-color;
-        text-align: center;
-        margin-bottom: 3rem;
-    }
-}
+    padding-top: 80px;
 
-.promo-card {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    margin-bottom: 2rem;
-    overflow: hidden;
-    transition: transform 0.3s;
-    
-    &:hover {
-        transform: translateY(-10px);
-    }
-    
-    .promo-image {
-        width: 100%;
-        height: 250px;
-        object-fit: cover;
-    }
-    
-    .promo-content {
-        padding: 2rem;
-        
-        h3 {
-            color: $dark-color;
-            margin-bottom: 1rem;
-        }
-        
-        .discount {
-            color: $primary-color;
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-        
-        .description {
-            color: #666;
+    &__hero {
+        background-color: $color-primario-claro;
+        padding: 4rem 2rem;
+        text-align: center;
+
+        h1 {
+            @include titulo-principal;
             margin-bottom: 1.5rem;
         }
-        
-        .validity {
-            font-size: 0.9rem;
-            color: #999;
-            margin-bottom: 1rem;
+
+        p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: $color-texto;
         }
-        
-        .btn-promo {
-            background-color: $primary-color;
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            width: 100%;
-            
+    }
+
+    &__carousel {
+        position: relative;
+        overflow: hidden;
+
+        .carousel-item {
+            img {
+                width: 100%;
+                height: 500px;
+                object-fit: cover;
+            }
+
+            .carousel-caption {
+                background: rgba(0, 0, 0, 0.6);
+                padding: 2rem;
+                border-radius: 1rem;
+                max-width: 600px;
+                margin: 0 auto;
+
+                h2 {
+                    font-size: 2.5rem;
+                    margin-bottom: 1rem;
+                }
+
+                p {
+                    font-size: 1.1rem;
+                    margin-bottom: 1.5rem;
+                }
+            }
+        }
+    }
+
+    &__especiales {
+        padding: 6rem 2rem;
+        background-color: $color-fondo;
+
+        &-contenedor {
+            @include contenedor;
+        }
+
+        &-header {
+            text-align: center;
+            margin-bottom: 4rem;
+
+            h2 {
+                @include titulo-secundario;
+                margin-bottom: 1rem;
+            }
+
+            p {
+                color: $color-texto;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+        }
+
+        &-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        &-item {
+            background-color: $color-fondo;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+
             &:hover {
-                background-color: darken($primary-color, 10%);
+                transform: translateY(-5px);
+            }
+
+            img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
+
+            &-contenido {
+                padding: 2rem;
+
+                h3 {
+                    font-size: 1.5rem;
+                    color: $color-texto-oscuro;
+                    margin-bottom: 1rem;
+                }
+
+                p {
+                    color: $color-texto;
+                    margin-bottom: 1.5rem;
+                }
+
+                .precio {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    margin-bottom: 1.5rem;
+
+                    .precio-original {
+                        color: $color-texto-claro;
+                        text-decoration: line-through;
+                        font-size: 1.2rem;
+                    }
+
+                    .precio-descuento {
+                        color: $color-primario;
+                        font-size: 1.8rem;
+                        font-weight: 600;
+                    }
+                }
+
+                .descuento {
+                    display: inline-block;
+                    background-color: $color-primario;
+                    color: white;
+                    padding: 0.5rem 1rem;
+                    border-radius: 20px;
+                    font-weight: 500;
+                    margin-bottom: 1rem;
+                }
+
+                .validez {
+                    color: $color-texto-claro;
+                    font-size: 0.9rem;
+                    margin-top: 1rem;
+                }
             }
         }
     }
 }
 
-.special-offers {
-    background-color: $light-color;
-    padding: 4rem 0;
-    
-    h2 {
-        color: $dark-color;
-        text-align: center;
-        margin-bottom: 3rem;
+// Media queries
+@media (max-width: 768px) {
+    .promociones {
+        &__hero {
+            padding: 3rem 1.5rem;
+        }
+
+        &__carousel {
+            .carousel-item {
+                img {
+                    height: 400px;
+                }
+
+                .carousel-caption {
+                    padding: 1.5rem;
+
+                    h2 {
+                        font-size: 2rem;
+                    }
+
+                    p {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+
+        &__especiales {
+            padding: 4rem 1.5rem;
+
+            &-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+
+            &-item {
+                &-contenido {
+                    padding: 1.5rem;
+
+                    h3 {
+                        font-size: 1.3rem;
+                    }
+                }
+            }
+        }
     }
-    
-    .offer-item {
-        text-align: center;
-        padding: 2rem;
-        
-        .offer-icon {
-            font-size: 3rem;
-            color: $primary-color;
-            margin-bottom: 1rem;
+}
+
+@media (max-width: 480px) {
+    .promociones {
+        &__hero {
+            h1 {
+                font-size: 2rem;
+            }
         }
-        
-        h3 {
-            color: $dark-color;
-            margin-bottom: 1rem;
+
+        &__carousel {
+            .carousel-item {
+                img {
+                    height: 300px;
+                }
+
+                .carousel-caption {
+                    h2 {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
         }
-        
-        p {
-            color: #666;
+
+        &__especiales {
+            &-item {
+                img {
+                    height: 180px;
+                }
+            }
         }
     }
-} 
+}

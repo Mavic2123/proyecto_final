@@ -1,102 +1,101 @@
 // Estilos para la página de promociones
 .promociones {
-    padding: 4rem 0;
-    
-    h1 {
-        color: $primary-color;
-        text-align: center;
-        margin-bottom: 3rem;
-    }
-}
+    padding-top: 80px;
 
-.promo-card {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    margin-bottom: 2rem;
-    overflow: hidden;
-    transition: transform 0.3s;
-    
-    &:hover {
-        transform: translateY(-10px);
-    }
-    
-    .promo-image {
-        width: 100%;
-        height: 250px;
-        object-fit: cover;
-    }
-    
-    .promo-content {
-        padding: 2rem;
-        
-        h3 {
-            color: $dark-color;
-            margin-bottom: 1rem;
-        }
-        
-        .discount {
-            color: $primary-color;
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-        
-        .description {
-            color: #666;
-            margin-bottom: 1.5rem;
-        }
-        
-        .validity {
-            font-size: 0.9rem;
-            color: #999;
-            margin-bottom: 1rem;
-        }
-        
-        .btn-promo {
-            background-color: $primary-color;
+    &__hero {
+        height: 400px;
+        background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../img/promociones-hero.jpg');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        margin-bottom: 4rem;
+
+        h1 {
+            @include titulo-principal;
             color: white;
-            padding: 0.8rem 1.5rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            width: 100%;
-            
-            &:hover {
-                background-color: darken($primary-color, 10%);
+        }
+    }
+
+    &__carousel {
+        margin-bottom: 4rem;
+
+        .carousel-item {
+            img {
+                height: 500px;
+                object-fit: cover;
             }
         }
-    }
-}
 
-.special-offers {
-    background-color: $light-color;
-    padding: 4rem 0;
-    
-    h2 {
-        color: $dark-color;
-        text-align: center;
-        margin-bottom: 3rem;
+        .carousel-caption {
+            background-color: rgba(0,0,0,0.7);
+            padding: 2rem;
+            border-radius: 1rem;
+        }
     }
-    
-    .offer-item {
-        text-align: center;
-        padding: 2rem;
-        
-        .offer-icon {
-            font-size: 3rem;
-            color: $primary-color;
-            margin-bottom: 1rem;
+
+    &__especiales {
+        padding: 4rem 0;
+        background-color: $color-fondo;
+
+        h2 {
+            @include titulo-secundario;
+            text-align: center;
+            margin-bottom: 3rem;
         }
-        
-        h3 {
-            color: $dark-color;
-            margin-bottom: 1rem;
+
+        &-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
         }
-        
-        p {
-            color: #666;
+
+        &-item {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: translateY(-5px);
+            }
+
+            i {
+                font-size: 2.5rem;
+                color: $color-primario;
+                margin-bottom: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+                color: $color-texto-oscuro;
+            }
+
+            p {
+                color: $color-texto;
+                margin-bottom: 1.5rem;
+            }
+
+            .precio {
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: $color-primario;
+                margin-bottom: 1rem;
+
+                .precio-original {
+                    text-decoration: line-through;
+                    color: $color-texto;
+                    font-size: 1.2rem;
+                    margin-right: 1rem;
+                }
+            }
         }
     }
 } 

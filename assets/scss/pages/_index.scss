@@ -1,68 +1,77 @@
 // Estilos para la página de inicio
-.hero {
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    @include flex-center;
-    text-align: center;
-    color: white;
-    
-    h1 {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-        
-        @include responsive(desktop) {
-            font-size: 4rem;
-        }
-    }
-    
-    p {
-        font-size: 1.2rem;
-        max-width: 600px;
-        margin: 0 auto;
-    }
-}
-
-.features {
-    padding: 4rem 0;
-    background-color: $light-color;
-    
-    .feature-card {
+.home {
+    &__hero {
+        height: 100vh;
+        background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/hero-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         text-align: center;
-        padding: 2rem;
-        margin-bottom: 2rem;
-        
-        img {
-            width: 100px;
-            height: 100px;
-            margin-bottom: 1rem;
+        color: white;
+
+        h1 {
+            @include titulo-principal;
+            color: white;
+            margin-bottom: 2rem;
         }
-        
-        h3 {
-            color: $primary-color;
-            margin-bottom: 1rem;
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
         }
     }
-}
 
-.cta-section {
-    background-color: $primary-color;
-    color: white;
-    padding: 4rem 0;
-    text-align: center;
-    
-    .btn-secondary {
-        background-color: $secondary-color;
-        color: white;
-        padding: 1rem 2rem;
-        border: none;
-        border-radius: 5px;
-        font-size: 1.1rem;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        
-        &:hover {
-            background-color: darken($secondary-color, 10%);
+    &__destacados {
+        padding: 6rem 2rem;
+        background-color: $color-fondo;
+
+        &-contenedor {
+            @include contenedor;
+        }
+
+        h2 {
+            @include titulo-secundario;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        &-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        &-item {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 1rem;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: translateY(-5px);
+            }
+
+            img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+                color: $color-texto-oscuro;
+            }
+
+            p {
+                color: $color-texto;
+                margin-bottom: 1.5rem;
+            }
         }
     }
 } 
