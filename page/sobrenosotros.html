@@ -11,10 +11,10 @@
     <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
 
-<body class="about-page">
+<body class="sobre-nosotros">
     <!-- ========== HEADER ========== -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark nav-menu">
+        <nav class="navbar navbar-expand-lg navbar-dark nav-menu fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand" href="../index.html">
                     <img src="../assets/img/logoworld (1).png" alt="Logo WorldBurguer" width="120" height="120" class="d-inline-block" />
@@ -36,9 +36,9 @@
     </header>
 
     <!-- ========== MAIN ========== -->
-    <main>
+    <main class="sobre-nosotros__container">
         <!-- Historia -->
-        <section class="about-page__historia">
+        <section class="sobre-nosotros__historia">
             <div class="container">
                 <h1>Nuestra Historia</h1>
                 <div class="row align-items-center">
@@ -54,7 +54,7 @@
         </section>
 
         <!-- Valores -->
-        <section class="about-page__valores">
+        <section class="sobre-nosotros__valores">
             <div class="container text-center">
                 <h2 class="mb-4">Nuestra Filosofía</h2>
                 <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -82,26 +82,33 @@
     </main>
 
     <!-- ========== FOOTER ========== -->
-    <footer class="bg-dark text-white text-center py-3 mt-5">
+    <footer class="footer bg-dark text-white py-4">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h4>WorldBurguer</h4>
+                    <p>Las mejores hamburguesas artesanales de Rosario</p>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
                     <h4>Contacto</h4>
-                    <p>Email: info@worldburguer.com</p>
-                    <p>Tel: (341) 123-4567</p>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt"></i> Av. Pellegrini 1234, Rosario</p>
+                        <p><i class="fas fa-phone"></i> (341) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> info@worldburguer.com</p>
+                    </address>
                 </div>
                 <div class="col-md-4">
                     <h4>Síguenos</h4>
-                    <div class="social-links">
-                        <a href="#" class="text-white me-2"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                    <div class="redes-sociales">
+                        <a href="https://facebook.com/worldburguer" class="text-white me-3" aria-label="Facebook"><i class="fab fa-facebook fa-2x"></i></a>
+                        <a href="https://instagram.com/worldburguer" class="text-white me-3" aria-label="Instagram"><i class="fab fa-instagram fa-2x"></i></a>
+                        <a href="https://twitter.com/worldburguer" class="text-white" aria-label="Twitter"><i class="fab fa-twitter fa-2x"></i></a>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <p class="mb-0">&copy; 2025 WorldBurguer</p>
-                    <p>Rosario, Santa Fe</p>
-                </div>
+            </div>
+            <hr class="mt-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2024 WorldBurguer. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>

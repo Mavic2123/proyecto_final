@@ -1,3 +1,21 @@
+// Importar utilidades primero
+@import "utils/variables";
+@import "utils/mixins";
+
+// Importar base
+@import "base/reset";
+@import "base/typography";
+
+// Importar componentes
+@import "components/navbar";
+
+// Importar páginas
+@import "pages/index";
+@import "pages/menu";
+@import "pages/promociones";
+@import "pages/sobrenosotros";
+@import "pages/contacto";
+
 // Variables
 $color-primario: #FF6B35;
 $color-primario-claro: #FFE3D9;
@@ -7,10 +25,11 @@ $color-texto: #4A4A4A;
 $color-texto-oscuro: #2D2D2D;
 
 // Mixins
-@mixin contenedor {
+@mixin container {
+    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 $spacing-md;
 }
 
 @mixin titulo-principal {
@@ -26,13 +45,6 @@ $color-texto-oscuro: #2D2D2D;
     color: $color-texto-oscuro;
     margin-bottom: 1rem;
 }
-
-// Importar páginas
-@import "pages/index";
-@import "pages/menu";
-@import "pages/promociones";
-@import "pages/sobrenosotros";
-@import "pages/contacto";
 
 // Estilos base
 * {
@@ -91,61 +103,14 @@ img {
     }
 }
 
-// Navbar
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: $color-fondo;
-    padding: 1rem 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    z-index: 1000;
-
-    &__contenedor {
-        @include contenedor;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    &__logo {
-        img {
-            height: 50px;
-        }
-    }
-
-    &__menu {
-        display: flex;
-        gap: 2rem;
-
-        a {
-            color: $color-texto;
-            font-weight: 500;
-            transition: color 0.3s ease;
-
-            &:hover, &.activo {
-                color: $color-primario;
-            }
-        }
-    }
-
-    &__toggle {
-        display: none;
-        font-size: 1.5rem;
-        cursor: pointer;
-        color: $color-texto;
-    }
-}
-
 // Footer
 .footer {
     background-color: $color-texto-oscuro;
     color: white;
     padding: 4rem 0 2rem;
 
-    &__contenedor {
-        @include contenedor;
+    &__container {
+        @include container;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 2rem;
@@ -264,7 +229,7 @@ img {
     }
 
     .footer {
-        &__contenedor {
+        &__container {
             grid-template-columns: repeat(2, 1fr);
         }
     }
@@ -272,7 +237,7 @@ img {
 
 @media (max-width: 480px) {
     .footer {
-        &__contenedor {
+        &__container {
             grid-template-columns: 1fr;
             text-align: center;
 

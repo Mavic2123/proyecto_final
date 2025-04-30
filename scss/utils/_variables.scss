@@ -1,7 +1,7 @@
 // Colores
-$color-primario: #FF4B2B;          // Naranja cálido
-$color-primario-claro: #FFE6E0;    // Naranja claro
-$color-secundario: #2C1810;        // Marrón oscuro
+$color-primario: #FF6B35;          // Naranja cálido
+$color-primario-claro: #FFE3D9;    // Naranja claro
+$color-secundario: #2EC4B6;        // Marrón oscuro
 $color-fondo: #FFFFFF;             // Blanco
 $color-texto: #4A4A4A;             // Gris oscuro
 $color-texto-oscuro: #2D2D2D;      // Casi negro
@@ -12,33 +12,37 @@ $color-exito: #28A745;             // Verde
 $color-error: #DC3545;             // Rojo
 
 // Fuentes
-$fuente-principal: 'Poppins', sans-serif;
-$fuente-titulos: 'Montserrat', sans-serif;
+$font-family-base: 'Poppins', sans-serif;
+$font-family-titulos: 'Montserrat', sans-serif;
+$font-size-base: 1rem;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
 
 // Tamaños de fuente
-$texto-pequeno: 0.875rem;    // 14px
-$texto-base: 1rem;           // 16px
-$texto-medio: 1.125rem;      // 18px
-$texto-grande: 1.25rem;      // 20px
-$titulo-pequeno: 1.5rem;     // 24px
-$titulo-medio: 2rem;         // 32px
-$titulo-grande: 2.5rem;      // 40px
+$font-size-sm: 0.875rem;    // 14px
+$font-size-base: 1rem;      // 16px
+$font-size-md: 1.125rem;    // 18px
+$font-size-lg: 1.25rem;     // 20px
+$font-size-xl: 1.5rem;      // 24px
+$font-size-2xl: 2rem;       // 32px
+$font-size-3xl: 2.5rem;     // 40px
 
 // Breakpoints
-$movil: 576px;
-$tablet: 768px;
-$desktop: 992px;
-$desktop-xl: 1200px;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
 
 // Espaciado
-$espaciado-xs: 0.25rem;      // 4px
-$espaciado-s: 0.5rem;        // 8px
-$espaciado-m: 1rem;          // 16px
-$espaciado-l: 1.5rem;        // 24px
-$espaciado-xl: 2rem;         // 32px
+$spacing-xs: 0.25rem;      // 4px
+$spacing-sm: 0.5rem;        // 8px
+$spacing-md: 1rem;          // 16px
+$spacing-lg: 2rem;          // 32px
+$spacing-xl: 4rem;          // 64px
 
 // Bordes y sombras
-$borde-radio: 8px;
-$sombra-suave: 0 2px 4px rgba(0,0,0,0.1);
-$sombra-media: 0 4px 6px rgba(0,0,0,0.1);
-$sombra-fuerte: 0 10px 20px rgba(0,0,0,0.15); 
+$border-radius: 8px;
+$shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+$shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+$shadow-lg: 0 10px 20px rgba(0,0,0,0.15); 

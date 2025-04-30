@@ -3,8 +3,8 @@
     padding: 6rem 2rem;
     background-color: $color-fondo;
 
-    &__contenedor {
-        @include contenedor;
+    &__container {
+        @include container;
     }
 
     // Sección Historia
@@ -13,7 +13,7 @@
         text-align: center;
 
         h2 {
-            @include titulo-secundario;
+            @include title-secondary;
             margin-bottom: 2rem;
         }
 
@@ -31,7 +31,7 @@
         margin-bottom: 6rem;
         
         h2 {
-            @include titulo-secundario;
+            @include title-secondary;
             text-align: center;
             margin-bottom: 3rem;
         }
@@ -78,7 +78,7 @@
         margin-bottom: 6rem;
         
         h2 {
-            @include titulo-secundario;
+            @include title-secondary;
             text-align: center;
             margin-bottom: 3rem;
         }
@@ -154,7 +154,7 @@
     // Sección Galería
     &__galeria {
         h2 {
-            @include titulo-secundario;
+            @include title-secondary;
             text-align: center;
             margin-bottom: 3rem;
         }

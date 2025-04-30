@@ -1,0 +1,96 @@
+// Estilos del Navbar
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+
+    &.navbar-dark {
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .navbar-brand {
+        img {
+            height: 60px;
+            width: auto;
+            transition: transform 0.3s ease;
+            
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    .navbar-nav {
+        .nav-item {
+            margin: 0 0.5rem;
+
+            .nav-link {
+                color: white;
+                font-weight: 500;
+                padding: 0.5rem 1rem;
+                transition: color 0.3s ease;
+
+                &:hover,
+                &.active {
+                    color: $color-primario;
+                }
+            }
+        }
+    }
+
+    .navbar-toggler {
+        border-color: rgba(255, 255, 255, 0.5);
+        padding: 0.5rem;
+        
+        &:focus {
+            box-shadow: none;
+            outline: none;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+    }
+
+    @media (max-width: 991px) {
+        .navbar-collapse {
+            background-color: rgba(0, 0, 0, 0.95);
+            padding: 1rem;
+            margin-top: 0.5rem;
+            border-radius: 0.25rem;
+        }
+
+        .nav-item {
+            margin: 0.5rem 0;
+            text-align: center;
+        }
+
+        .navbar-nav {
+            padding: 1rem 0;
+        }
+    }
+}
+
+// Ajuste para el contenido debajo del navbar
+body {
+    padding-top: 92px; // Altura del navbar
+}
+
+// Ajuste específico para la página de inicio
+.home {
+    padding-top: 0;
+    
+    .navbar {
+        position: absolute;
+        background-color: transparent;
+
+        &.scrolled {
+            position: fixed;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+    }
+} 

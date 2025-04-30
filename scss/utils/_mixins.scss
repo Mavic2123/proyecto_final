@@ -1,19 +1,91 @@
-// Flexbox
+// Mixins de layout
+@mixin container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+}
+
 @mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @mixin flex-between {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 @mixin flex-column {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
+}
+
+// Mixins de tipografía
+@mixin heading-1 {
+    font-size: $font-size-3xl;
+    font-weight: $font-weight-bold;
+    line-height: 1.2;
+}
+
+@mixin heading-2 {
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    line-height: 1.3;
+}
+
+@mixin title-primary {
+    font-size: $font-size-3xl;
+    font-weight: $font-weight-bold;
+    color: $color-texto-oscuro;
+    margin-bottom: $spacing-md;
+    line-height: 1.2;
+}
+
+@mixin title-secondary {
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    color: $color-texto-oscuro;
+    margin-bottom: $spacing-md;
+    line-height: 1.3;
+    text-align: center;
+}
+
+// Mixins de media queries
+@mixin mobile {
+    @media (max-width: #{$breakpoint-sm - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$breakpoint-sm}) and (max-width: #{$breakpoint-lg - 1px}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$breakpoint-lg}) {
+        @content;
+    }
+}
+
+// Mixins de efectos
+@mixin hover-lift {
+    transition: transform 0.3s ease;
+    &:hover {
+        transform: translateY(-3px);
+    }
+}
+
+@mixin card-shadow {
+    box-shadow: $shadow-sm;
+    transition: box-shadow 0.3s ease;
+    &:hover {
+        box-shadow: $shadow-md;
+    }
 }
 
 // Media Queries
@@ -24,48 +96,40 @@
 }
 
 // Botones
-@mixin boton-base {
-  display: inline-block;
-  padding: $espaciado-s $espaciado-l;
-  border: none;
-  border-radius: $borde-radio;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: $fuente-principal;
-  text-align: center;
+@mixin button-base {
+    display: inline-block;
+    padding: $spacing-sm $spacing-lg;
+    border: none;
+    border-radius: $border-radius;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: $font-family-base;
+    text-align: center;
 }
 
 // Transiciones
-@mixin transicion-suave {
-  transition: all 0.3s ease;
+@mixin smooth-transition {
+    transition: all 0.3s ease;
 }
 
 // Sombras
-@mixin sombra-hover {
+@mixin shadow-hover {
   transition: box-shadow 0.3s ease;
   &:hover {
-    box-shadow: $sombra-media;
+    box-shadow: $shadow-md;
   }
 }
 
 // Grid
-@mixin grid($columnas: 1, $gap: $espaciado-m) {
-  display: grid;
-  grid-template-columns: repeat($columnas, 1fr);
-  gap: $gap;
-}
-
-// Contenedor
-@mixin contenedor {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 $espaciado-m;
+@mixin grid($columns: 1, $gap: $spacing-md) {
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    gap: $gap;
 }
 
 // Texto truncado
-@mixin texto-truncado {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+@mixin text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 } 

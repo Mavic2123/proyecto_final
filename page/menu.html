@@ -38,7 +38,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <!-- CSS Principal -->
-    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
 </head>
 
 <body class="menu-page">
@@ -50,11 +50,12 @@
                 <a class="navbar-brand" href="../index.html">
                     <img src="../assets/img/logoworld (1).png" alt="Logo WorldBurguer" width="120" height="120" class="d-inline-block" />
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Alternar navegación">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Nuestro Menú</a></li>
@@ -260,6 +261,19 @@
         document.querySelectorAll('.animate__animated').forEach((element) => {
             observer.observe(element);
         });
+
+        // Manejar el cambio de estilo del navbar al hacer scroll
+        const navbar = document.querySelector('.nav-menu');
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        handleScroll(); // Verificar el estado inicial
     </script>
 </body>
 

@@ -8,7 +8,7 @@
         text-align: center;
 
         h1 {
-            @include titulo-principal;
+            @include title-primary;
             margin-bottom: 1.5rem;
         }
 
@@ -19,8 +19,8 @@
         }
     }
 
-    &__contenedor {
-        @include contenedor;
+    &__container {
+        @include container;
         padding: 5rem 2rem;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -29,7 +29,7 @@
 
     &__info {
         h2 {
-            @include titulo-secundario;
+            @include title-secondary;
             margin-bottom: 2rem;
         }
 
@@ -99,7 +99,7 @@
         box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 
         h2 {
-            @include titulo-secundario;
+            @include title-secondary;
             margin-bottom: 2rem;
         }
 
@@ -146,7 +146,7 @@
 // Media queries
 @media (max-width: 768px) {
     .contacto {
-        &__contenedor {
+        &__container {
             grid-template-columns: 1fr;
             gap: 3rem;
             padding: 3rem 1.5rem;

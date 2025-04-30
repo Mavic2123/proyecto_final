@@ -24,8 +24,8 @@
         z-index: 1;
     }
 
-    &__contenido {
-        @include contenedor;
+    &__content {
+        @include container;
         position: relative;
         z-index: 2;
         animation: fadeInUp 1s ease-out;
@@ -116,8 +116,8 @@
     padding: 6rem 2rem;
     background-color: $color-fondo;
 
-    &__contenedor {
-        @include contenedor;
+    &__container {
+        @include container;
     }
 
     &__grid {
@@ -154,8 +154,8 @@
     padding: 6rem 2rem;
     background-color: $color-primario-claro;
 
-    &__contenedor {
-        @include contenedor;
+    &__container {
+        @include container;
         text-align: center;
     }
 
@@ -163,7 +163,7 @@
         margin-bottom: 4rem;
 
         h2 {
-            @include titulo-secundario;
+            @include title-secondary;
             margin-bottom: 1rem;
         }
 
@@ -197,7 +197,7 @@
             object-fit: cover;
         }
 
-        &-contenido {
+        &-content {
             padding: 1.5rem;
 
             h3 {
@@ -226,8 +226,8 @@
     padding: 6rem 2rem;
     background-color: $color-fondo;
 
-    &__contenedor {
-        @include contenedor;
+    &__container {
+        @include container;
         text-align: center;
     }
 
@@ -235,7 +235,7 @@
         margin-bottom: 4rem;
 
         h2 {
-            @include titulo-secundario;
+            @include title-secondary;
             margin-bottom: 1rem;
         }
 
@@ -299,7 +299,7 @@
 // Media queries
 @media (max-width: 768px) {
     .hero {
-        &__contenido {
+        &__content {
             h1 {
                 font-size: 2.5rem;
             }
@@ -335,7 +335,7 @@
 
 @media (max-width: 480px) {
     .hero {
-        &__contenido {
+        &__content {
             h1 {
                 font-size: 2rem;
             }

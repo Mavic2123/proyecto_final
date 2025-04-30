@@ -1,38 +1,38 @@
 .footer {
   background-color: $color-secundario;
   color: $color-fondo;
-  padding: $espaciado-xl 0;
-  margin-top: $espaciado-xl;
+  padding: $spacing-xl 0;
+  margin-top: $spacing-xl;
 
-  &__contenedor {
-    @include contenedor;
-    @include grid(1, $espaciado-xl);
+  &__container {
+    @include container;
+    @include grid(1, $spacing-xl);
 
-    @include responsive($tablet) {
+    @include responsive($breakpoint-md) {
       grid-template-columns: repeat(3, 1fr);
     }
   }
 
   &__seccion {
     @include flex-column;
-    gap: $espaciado-m;
+    gap: $spacing-md;
   }
 
   &__titulo {
-    font-family: $fuente-titulos;
-    font-size: $texto-grande;
+    font-family: $font-family-titulos;
+    font-size: $font-size-lg;
     font-weight: bold;
-    margin-bottom: $espaciado-s;
+    margin-bottom: $spacing-sm;
   }
 
   &__lista {
     @include flex-column;
-    gap: $espaciado-s;
+    gap: $spacing-sm;
   }
 
   &__link {
     color: $color-gris-claro;
-    @include transicion-suave;
+    @include smooth-transition;
 
     &:hover {
       color: $color-fondo;
@@ -42,22 +42,22 @@
   &__contacto {
     display: flex;
     align-items: center;
-    gap: $espaciado-s;
+    gap: $spacing-sm;
     color: $color-gris-claro;
 
     i {
-      font-size: $texto-medio;
+      font-size: $font-size-md;
     }
   }
 
   &__redes {
     display: flex;
-    gap: $espaciado-m;
+    gap: $spacing-md;
 
     a {
       color: $color-gris-claro;
-      font-size: $texto-grande;
-      @include transicion-suave;
+      font-size: $font-size-lg;
+      @include smooth-transition;
 
       &:hover {
         color: $color-fondo;
@@ -69,8 +69,8 @@
   &__copyright {
     text-align: center;
     color: $color-gris-medio;
-    margin-top: $espaciado-xl;
-    padding-top: $espaciado-l;
+    margin-top: $spacing-xl;
+    padding-top: $spacing-lg;
     border-top: 1px solid rgba($color-fondo, 0.1);
   }
 } 

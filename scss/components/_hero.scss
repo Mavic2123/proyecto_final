@@ -27,14 +27,14 @@
     }
   }
 
-  &__contenedor {
-    @include contenedor;
+  &__container {
+    @include container;
     @include flex-center;
     min-height: inherit;
     position: relative;
     z-index: 2;
     text-align: center;
-    padding: $espaciado-xl 0;
+    padding: $spacing-xl 0;
   }
 
   &__contenido {
@@ -42,27 +42,27 @@
   }
 
   &__titulo {
-    font-family: $fuente-titulos;
-    font-size: $titulo-grande;
+    font-family: $font-family-titulos;
+    font-size: $font-size-3xl;
     color: $color-fondo;
-    margin-bottom: $espaciado-l;
+    margin-bottom: $spacing-lg;
     line-height: 1.2;
 
-    @include responsive($tablet) {
-      font-size: calc(#{$titulo-grande} * 1.5);
+    @include responsive($breakpoint-md) {
+      font-size: calc(#{$font-size-3xl} * 1.5);
     }
   }
 
   &__subtitulo {
-    font-size: $texto-grande;
+    font-size: $font-size-lg;
     color: rgba($color-fondo, 0.9);
-    margin-bottom: $espaciado-xl;
+    margin-bottom: $spacing-xl;
     line-height: 1.6;
   }
 
   &__botones {
     display: flex;
-    gap: $espaciado-m;
+    gap: $spacing-md;
     justify-content: center;
     flex-wrap: wrap;
   }

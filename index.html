@@ -44,7 +44,6 @@
 <body class="inicio">
     <!-- Header -->
     <header class="header">
-        <h1 class="visually-hidden">WorldBurguer - Las mejores hamburguesas artesanales de Rosario</h1>
         <nav class="navbar navbar-expand-lg navbar-dark nav-menu" aria-label="Navegación principal">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
@@ -70,8 +69,8 @@
 
     <!-- Hero Section -->
     <section class="hero presentacion text-center text-white d-flex align-items-center justify-content-center animate__animated animate__fadeIn">
-        <div class="container">
-            <h2 class="display-4 animate__animated animate__slideInDown">¡La mejor hamburguesa artesanal!</h2>
+        <div class="hero__content">
+            <h1 class="display-4 animate__animated animate__slideInDown">¡Bienvenidos a la experiencia WorldBurguer!</h1>
             <p class="lead animate__animated animate__slideInUp">Sabores únicos, atención personalizada y calidad premium garantizada.</p>
             <a href="page/menu.html" class="btn btn-primary ver-menu animate__animated animate__pulse animate__infinite">Ver menú</a>
         </div>
@@ -80,33 +79,33 @@
     <main>
         <!-- Características -->
         <section class="caracteristicas py-5" aria-labelledby="caracteristicas-titulo">
-            <div class="container">
-                <h2 id="caracteristicas-titulo" class="text-center mb-4 animate__animated animate__fadeIn">¿Por qué elegirnos?</h2>
-                <div class="row text-center g-4">
+            <div class="caracteristicas__container">
+                <h2 id="caracteristicas-titulo" class="caracteristicas__titulo text-center mb-4 animate__animated animate__fadeIn">¿Por qué elegirnos?</h2>
+                <div class="caracteristicas__grid">
                     <div class="col-md-4">
-                        <article class="card-menu card h-100 animate__animated animate__fadeInLeft">
+                        <article class="card-menu animate__animated animate__fadeInLeft">
                             <div class="card-body">
-                                <i class="fas fa-leaf fa-3x mb-3 text-primary"></i>
-                                <h3 class="card-title h5">Ingredientes Frescos</h3>
-                                <p class="card-text">Seleccionamos cuidadosamente los mejores ingredientes locales para garantizar el sabor auténtico en cada hamburguesa.</p>
+                                <i class="fas fa-leaf fa-3x"></i>
+                                <h3>Ingredientes Frescos</h3>
+                                <p>Seleccionamos cuidadosamente los mejores ingredientes locales para garantizar el sabor auténtico en cada hamburguesa.</p>
                             </div>
                         </article>
                     </div>
                     <div class="col-md-4">
-                        <article class="card-menu card h-100 animate__animated animate__fadeInUp">
+                        <article class="card-menu animate__animated animate__fadeInUp">
                             <div class="card-body">
-                                <i class="fas fa-star fa-3x mb-3 text-primary"></i>
-                                <h3 class="card-title h5">Atención Personalizada</h3>
-                                <p class="card-text">Nuestro equipo apasionado te brinda un servicio excepcional para que vivas la mejor experiencia.</p>
+                                <i class="fas fa-star fa-3x"></i>
+                                <h3>Atención Personalizada</h3>
+                                <p>Nuestro equipo apasionado te brinda un servicio excepcional para que vivas la mejor experiencia.</p>
                             </div>
                         </article>
                     </div>
                     <div class="col-md-4">
-                        <article class="card-menu card h-100 animate__animated animate__fadeInRight">
+                        <article class="card-menu animate__animated animate__fadeInRight">
                             <div class="card-body">
-                                <i class="fas fa-heart fa-3x mb-3 text-primary"></i>
-                                <h3 class="card-title h5">Sabor Inigualable</h3>
-                                <p class="card-text">Recetas únicas desarrolladas con pasión para ofrecerte hamburguesas que te enamorarán desde el primer bocado.</p>
+                                <i class="fas fa-heart fa-3x"></i>
+                                <h3>Sabor Inigualable</h3>
+                                <p>Recetas únicas desarrolladas con pasión para ofrecerte hamburguesas que te enamorarán desde el primer bocado.</p>
                             </div>
                         </article>
                     </div>
@@ -115,10 +114,10 @@
         </section>
 
         <!-- Productos Destacados -->
-        <section class="productos-destacados py-5 bg-light" aria-labelledby="destacados-titulo">
-            <div class="container">
+        <section class="menu-destacado py-5 bg-light" aria-labelledby="destacados-titulo">
+            <div class="menu-destacado__container">
                 <h2 id="destacados-titulo" class="text-center mb-5 animate__animated animate__fadeIn">Nuestros Destacados</h2>
-                <div class="grid-productos">
+                <div class="menu-destacado__grid">
                     <article class="producto animate__animated animate__fadeInUp">
                         <img src="assets/img/completa.jpg" alt="Hamburguesa Clásica WorldBurguer con lechuga, tomate y queso" width="300" height="200" loading="lazy">
                         <h3>Hamburguesa Clásica</h3>
@@ -193,6 +192,20 @@
         document.querySelectorAll('.animate__animated').forEach((element) => {
             observer.observe(element);
         });
+
+        // Manejar el cambio de estilo del navbar al hacer scroll
+        const navbar = document.querySelector('.nav-menu');
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        // Ejecutar una vez al cargar la página
+        handleScroll();
     </script>
 </body>
 
